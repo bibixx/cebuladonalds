@@ -1,0 +1,5 @@
+{
+  "version": 2,
+  "alias": "cebuladonalds.now.sh",
+  "builds": [{ "src": "index.js", "use": "@now/node" }]
+}
