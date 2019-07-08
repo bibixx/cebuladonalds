@@ -1,4 +1,4 @@
-const html = ({ token, dateString }) => `
+const html = ({ token, dateString, type }) => `
   <html ng-app="surveyApp" class="no-js ng-scope" lang="en" xmlns:ng="http://angularjs.org"
     xmlns="http://www.w3.org/1999/xhtml">
   <link type="text/css" id="dark-mode" rel="stylesheet" href="">
@@ -167,7 +167,14 @@ const html = ({ token, dateString }) => `
                               <span class="text">
                                 <span class="ng-binding">
                                   <img
-                                    src="https://www.inmoment.com/websurvey/servlet/BlobServlet?sid=45720160-0529-43fa-9380-f67c3f09ea72&v=0&type=0&tag=couponIceCream"
+                                    src="${
+                                      type === 'icecream'
+                                      ? 'https://www.inmoment.com/websurvey/servlet/BlobServlet?sid=45720160-0529-43fa-9380-f67c3f09ea72&v=0&type=0&tag=couponIceCream'
+                                      :
+                                        type === 'hamburger'
+                                          ? 'https://www.placecage.com/c/580/200'
+                                          : ''
+                                    }"
                                     style="width: 100%; max-width: 580px;"
                                   />
                                 </span>
@@ -328,7 +335,8 @@ module.exports = (req, res) => {
     .send(
       html({
         token,
-        dateString
+        dateString,
+        type: req.query.type
       })
     )
 };

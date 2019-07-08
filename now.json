@@ -1,5 +1,12 @@
 {
   "version": 2,
   "alias": "cebuladonalds.now.sh",
-  "builds": [{ "src": "index.js", "use": "@now/node" }]
+  "builds": [
+    { "src": "result.js", "use": "@now/node" },
+    { "src": "index.html", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/hamburger.html", "dest": "result.js?type=hamburger" },
+    { "src": "/icecream.html", "dest": "result.js?type=icecream" }
+  ]
 }
