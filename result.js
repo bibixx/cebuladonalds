@@ -326,7 +326,7 @@ const gc = () => generateChar();
 const t2d = s => String(s).padStart(2, '0');
 
 module.exports = (req, res) => {
-  const date = new Date();
+  const date = new Date(Date.now() - 1000 * 60 * 60 * 24);
   const dateString = `${t2d(date.getDate())}/${t2d(date.getMonth() + 1)}/${date.getFullYear()}`
   const token = `${gc()}-${mr()}${mr()}-${gc()}${gc()}-${mr()}`;
 
