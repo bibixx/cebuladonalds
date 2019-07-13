@@ -172,7 +172,7 @@ const html = ({ token, dateString, type }) => `
                                       ? 'https://www.inmoment.com/websurvey/servlet/BlobServlet?sid=45720160-0529-43fa-9380-f67c3f09ea72&v=0&type=0&tag=couponIceCream'
                                       :
                                         type === 'hamburger'
-                                          ? 'https://www.placecage.com/c/580/200'
+                                          ? 'https://www.inmoment.com/websurvey/servlet/BlobServlet?sid=ec784c28-b2e1-0c31-b856-87d4c6f5b548&v=0&type=0&tag=couponHamburger'
                                           : ''
                                     }"
                                     style="width: 100%; max-width: 580px;"
